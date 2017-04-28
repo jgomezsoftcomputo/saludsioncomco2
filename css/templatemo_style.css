@@ -27,13 +27,31 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
           border-radius: 0 !important;
 }
 
+section {
+	padding-bottom: 20px;
+	min-height: 300px;
+}
+
+.section_1 {
+	background: transparent;
+}
+
+.section_2 {
+	background: #fbfbfb;
+}
+
 .descripcion_imagen{
 	background-color: rgba(0, 0, 0, 0.8);
 	padding: 12px 8px 8px 8px;
 	color: #fff;
-	font-weight: bold;
 	width: 100%;
 }
+
+
+.descripcion_imagen p{
+	margin-bottom:0px
+}
+
 
 .text-justify {
 	text-align: justify;
