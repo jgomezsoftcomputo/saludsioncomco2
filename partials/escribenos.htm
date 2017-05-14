@@ -1,0 +1,56 @@
+<section class="section_1 section_ajustable">
+    <div class="container">
+		<form id="main-contact-form" name="contact-form" method="post" action="sendemail_hm.php" style="max-width:500px;margin-left:auto;margin-right:auto">
+		    <div class="row">
+		        <div class="col-sm-12">
+		            <h3 class="titulo_verde">¡Nos interesa conocer tu opinión!</h3>
+		        </div>
+		    </div>
+		    <br>
+		    <div class="row  wow fadeInUp animated" data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeInUp;">
+		    	<div class="col-sm-12">
+		            <div class="form-group">
+						<select name="destino" class="form-control" require>
+							<option value="siau@saludsion.com.co">Atención al usuario</option>
+							<option value="aseguramiento@saludsion.com.co">Aseguramiento</option>
+							<option value="auxiliarpyp@saludsion.com.co">Auxiliar PyP</option>
+							<option value="gerencia@saludsion.com.co">Gerencia</option>
+							<option value="laboratorio@saludsion.com.co">Laboratorio</option>
+							<option value="promocionyprevencion@saludsion.com.co">Promoción y prevención</option>
+							<option value="recepcion@saludsion.com.co">Recepción</option>
+							<option value="recursoshumano@saludsion.com.co">Recursos Humanos</option>
+						</select>
+		            </div>
+		        </div>
+		        <div class="col-sm-12">
+		            <div class="form-group">
+		                <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required="required" oninvalid="this.setCustomValidity('Debe digitar su nombre!')" oninput="this.setCustomValidity('')">
+		            </div>
+		        </div>
+		        <div class="col-sm-12">
+		            <div class="form-group">
+		                <input type="email" name="email" class="form-control" placeholder="Correo electrónico" required="required" oninvalid="this.setCustomValidity('Debe digitar un email válido!')" oninput="this.setCustomValidity('')">
+		            </div>
+		        </div>
+		        <div class="col-sm-12">
+		            <div class="form-group">
+		                <input type="tel" name="telefono" class="form-control" placeholder="Teléfono" required="required" oninvalid="this.setCustomValidity('Debe digitar un número de teléfono válido!')" oninput="this.setCustomValidity('')">
+		            </div>
+		        </div>
+
+				<div class="col-sm-12">
+		            <div class="form-group">
+		                <textarea rows="6" placeholder="Mensaje" class="form-control" name="mensaje" required="required" oninvalid="this.setCustomValidity('Nos interesa saber cómo podemos ayudarte!!!')" oninput="this.setCustomValidity('')"></textarea>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <button type="submit" class="btn btn-info pull-right">ENVIAR</button>
+		    </div>
+		</form>
+	</div>
+</section>
+
+<script>
+  selectNav();
+</script>

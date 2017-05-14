@@ -32,6 +32,10 @@ section {
 	min-height: 300px;
 }
 
+.section_ajustable{
+	min-height: 0;	
+}
+
 .section_1 {
 	background: transparent;
 }
