@@ -1,0 +1,103 @@
+<section class="section_1">
+<div class="container">
+		<div class="row">
+		        <div class="col-sm-12">
+		            <h3 class="titulo_azul text-center">PQRSF</h3>
+		            <h4 class="titulo_verde text-center"><i>Peticiones, Quejas, Reclamos, Sugerencias y Felicitaciones</i></h4>
+		        </div>
+		    </div>
+		    <br/>
+		<form id="main-contact-form" name="contact-form" method="post" action="sendemail_pqrsf.php" style="max-width:500px;margin-left:auto;margin-right:auto">
+		    <div class="row  wow fadeInUp animated" data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeInUp;">
+				<div class="col-sm-12">
+				    <div class="form-group">
+						<select name="tipo" class="form-control" require>
+							<option value="Petición">Petición</option>
+							<option value="Queja y Reclamo">Queja y Reclamo</option>
+							<option value="Sugerencia">Sugerencia</option>
+							<option value="Felicitación">Felicitación</option>
+						</select>
+				    </div>
+				</div>
+
+				<div class="col-sm-12">
+				    <div class="form-group">
+						<select name="entidad" class="form-control" require>
+							<option value="EPS">EPS</option>
+							<option value="ARL">ARL</option>
+							<option value="Medicina Prepagada">Medicina Prepagada</option>
+							<option value="SOAT">SOAT</option>
+							<option value="Sisben">Sisben</option>
+							<option value="Particular">Particular</option>
+							<option value="Régimen especial">Régimen especial</option>
+							<option value="Otros">Otros</option>
+						</select>
+				    </div>
+				</div>
+
+		        <div class="col-sm-12">
+		            <div class="form-group">
+		                <input type="number" name="cedula" class="form-control" placeholder="Nro. Cédula" required="required" oninvalid="this.setCustomValidity('Debe digitar su número de cedula!')" oninput="this.setCustomValidity('')"/>
+		            </div>
+		        </div>
+		        <div class="col-sm-12">
+		            <div class="form-group">
+		                <input type="text" name="nombre" class="form-control" placeholder="Nombre completo" required="required" oninvalid="this.setCustomValidity('Debe digitar su nombre completo!')" oninput="this.setCustomValidity('')"/>
+		            </div>
+		        </div>
+		        <div class="col-sm-12">
+		            <div class="form-group">
+		                <input type="email" name="email" class="form-control" placeholder="Correo electrónico" required="required" oninvalid="this.setCustomValidity('Debe digitar un email válido!')" oninput="this.setCustomValidity('')"/>
+		            </div>
+		        </div>
+		        <div class="col-sm-12">
+		            <div class="form-group">
+		                <input type="number" name="telefono" class="form-control" placeholder="Teléfono" required="required" oninvalid="this.setCustomValidity('Debe digitar un número de teléfono válido!')" oninput="this.setCustomValidity('')"/>
+		            </div>
+		        </div>
+		        <div class="col-sm-12">
+		            <div class="form-group">
+		                <input type="text" name="ciudad" class="form-control" placeholder="Ciudad" required="required" oninvalid="this.setCustomValidity('Debe digitar la ciudad!')" oninput="this.setCustomValidity('')"/>
+		            </div>
+		        </div>
+		        <div class="col-sm-12">
+		            <div class="form-group">
+		                <input type="text" name="direccion" class="form-control" placeholder="Dirección" required="required" oninvalid="this.setCustomValidity('Debe digitar la dirección!')" oninput="this.setCustomValidity('')">
+		            </div>
+		        </div>
+		        <div class="col-sm-12">
+		            <div class="form-group">
+		                <textarea rows="6" placeholder="PQRSF" class="form-control" name="pqrsf" required="required" oninvalid="this.setCustomValidity('Debe digitar su PQRSF!!!')" oninput="this.setCustomValidity('')"></textarea>
+		            </div>
+		        </div>
+				
+		    </div>
+		    <div class="form-group">
+		        <button type="submit" class="btn btn-info pull-right">ENVIAR</button>
+		    </div>
+		</form>
+	</div>
+
+</section>
+
+<script>
+  selectNav($('#nav-item-pqrsf'));
+
+	var form = $('#main-contact-form');
+        form.submit(function (event) {
+            event.preventDefault();
+            var form_status = $('<div class="form_status"></div>');
+            $.ajax({
+                type: "POST",
+                url: $(this).attr('action'),
+                data: form.serialize(),
+                beforeSend: function () {
+                    form.prepend(form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Se esta enviando el correo...</p>').fadeIn());
+                }
+            }).done(function (data) {
+                form_status.html('<p class="text-success">PQRSF enviado correctamente!!!</p>').delay(3000).fadeOut();
+	        	form[0].reset();
+            });
+        });
+
+</script>

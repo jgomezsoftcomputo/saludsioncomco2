@@ -55,8 +55,6 @@ jQuery(function($) {
                 return $(this).data('group');
             }
         });
-
-
     });
 });
 
