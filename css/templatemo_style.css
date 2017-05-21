@@ -19,7 +19,7 @@ body {
 	-webkit-text-size-adjust: 100%;
 }
 
-h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neue, sans-serif; }
+h1, h2, h3, h4, h5, h6, span, p, li { font-family: 'Open Sans', Arial, Helvetice Neue, sans-serif; }
 
 * {
   -webkit-border-radius: 0 !important;
@@ -295,6 +295,21 @@ section {
 .navbar-default {
     background-color:#f9f9f9;
     border:none;
+}
+
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default,
+.ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+    background-color: #00B0F2;
+    border: 0px;
+    color:#fff!important;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active,
+a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+    background-color: #FF8304;
+    border: 0px;
+    color:#fff!important;
 }
 
 .navbar-default .navbar-nav > .active > a,
