@@ -1,23 +1,16 @@
 <section class="section_1 section_ajustable">
-    <div>
-        <div class="container">
-            <h2 class="titulo_azul text-center">Misión</h2>
+<div class="container">
+    <div id="accordion">
+        <h3 id="mision">Misión</h3>
+        <div class="text-center">
             <p class="text-justify">Somos una empresa prestadora de servicios de salud integral y laboral con excelente asesoría en el área de gestión laboral y familiar, favoreciendo la salud física, mental, social de nuestros clientes y partes interesadas.</p>
         </div>
-    </div>
-</section>
-<section class="section_2 section_ajustable">
-    <div>
-        <div class="container">
-            <h2 class="titulo_azul text-center">Visión</h2>
+  		<h3 id="vision">Visión</h3>
+        <div class="text-center">
             <p class="text-justify">En el año 2020, seremos reconocidos a nivel local y nacional, como empresa líder en la prestación de servicios en medicina laboral e integral, por eficacia y calidad en sus procesos y/o servicios, con cultura humanitaria, generando seguridad y confianza en la población colombiana.</p>
         </div>
-    </div>
-</section>
-<section class="section_1 section_ajustable">
-    <div>
-        <div class="container">
-            <h2 class="titulo_azul text-center">Valores Corporativos</h2>
+        <h3 id="valores_corporativos">Valores Corporativos</h3>
+        <div class="text-center">
             <p class="text-justify"><ul>
 			 	<li style="text-align: justify;"><strong><em class="titulo_verde">Responsabilidad:</em></strong> Ser consciente que nuestros actos tienen consecuencias directas o indirectas de un hecho, evento que permite reflexionar sobre la calidad de nuestras actividades.</li>
 			 	<li style="text-align: justify;"><strong><em class="titulo_verde">Integridad:</em> </strong>Capacidad de resolver la problemática en salud de los usuarios más allá de nuestras creencias y debilidades.</li>
@@ -30,12 +23,8 @@
 				</ul>
 			</p>
         </div>
-    </div>
-</section>
-<section class="section_2 section_ajustable">
-    <div>
-        <div class="container">
-            <h2 class="titulo_azul text-center">Objetivos Estrategicos</h2>
+  		<h3 id="objetivos_estrategicos">Objetivos Estrategicos</h3>
+        <div>
             <p class="text-justify">
 	            <ol>
 				 	<li>Garantizar la excelencia operativa de los servicios de salud, a través de un sistema de Gestión Integrado HSEQ.</li>
@@ -47,12 +36,8 @@
 				</ol>
 			</p>
         </div>
-    </div>
-</section>
-<section class="section_1 section_ajustable">
-    <div>
-        <div class="container">
-            <h2 class="titulo_azul text-center">Beneficios</h2>
+  		<h3 id="beneficios">Beneficios</h3>
+        <div>
             <p class="text-justify">
             <p style="text-align: justify;">En Salud Sion contamos con modernos equipos para las evaluaciones médicas ocupacionales y clínicas de laboratorios especializados:</p>
 			<ul>
@@ -72,8 +57,22 @@
 			</p>
         </div>
     </div>
+</div>
 </section>
 
 <script>
+$(function() {
+    $("#accordion").accordion({
+        heightStyle: "content",
+        collapsible: true,
+        active: 0,
+        beforeActivate: function(event, ui) {
+            $(this).blur();
+            $('html,body').animate({
+                scrollTop: 0
+            }, 'slow');
+        }
+    });
+});
   selectNav($('#nav-item-nosotros'));
 </script>
